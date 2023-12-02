@@ -100,14 +100,21 @@ pipeline {
                 sh "ansible-playbook Inventory_Playbook.yaml --private-key=$CEP2_test_key"
             }
         }
+        stage('Delay Timer') {
+            steps {
+                script {
+                    sleep time: 2, unit: 'MINUTES'
+                }
+            }
+        }
         stage('Kubernetes Installation') {
             steps {
-                sh "ansible-playbook -i inventory.yaml Ansible_Playbook.yaml --private-key=$CEP2_test_key -e 'ansible_ssh_common_args=\"-o StrictHostKeyChecking=no\"'"
+                sh "ansible-playbook -vv -i inventory.yaml Ansible_Playbook.yaml --private-key=$CEP2_test_key -e 'ansible_ssh_common_args=\"-o StrictHostKeyChecking=no\"'"
             }
         }
         stage('Kubernetes Tasks') {
             steps {
-                sh "ansible-playbook -i inventory.yaml Kubernetes_Playbook.yaml --private-key=$CEP2_test_key -e httpPort=$httpPort -e containerName=$containerName -e dockerImageTag=$dockerHubUser/$containerName:$tag"
+                sh "ansible-playbook -vv -i inventory.yaml Kubernetes_Playbook.yaml --private-key=$CEP2_test_key -e httpPort=$httpPort -e containerName=$containerName -e dockerImageTag=$dockerHubUser/$containerName:$tag"
             }
         }
 
