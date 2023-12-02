@@ -6,7 +6,7 @@ pipeline {
         dockerHubUser = ''
         containerName = "ercli-bankingapp-cep2"
         httpPort = "8989"
-        CEP2_test_key = "/home/elmerlakanilawy/CP2_test/CEP2_test.pem"
+        CEP2_test_key = "/home/elmerlakanilawy/CapstoneProject/ERCLI-CEP2/ERCLI_CEP2_Key.pem"
     }
 
     stages {
