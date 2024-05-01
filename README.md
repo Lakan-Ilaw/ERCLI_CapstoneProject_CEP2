@@ -1,3 +1,12 @@
+**PROBLEM STATEMENT:**
+![image](https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP2/assets/134827117/88cff55b-e295-43f9-8149-9a8479de500e)
+
+# **Solution and Documentation:**
+[[Lakan-Ilaw]Orbit Bank.pdf](https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP2/files/15172636/Lakan-Ilaw.Orbit.Bank.pdf)
+
+
+
+
 # Banking Application using Java8, Spring Boot, Spring Security and H2 DB
 
 RESTful API to simulate simple banking operations. 
